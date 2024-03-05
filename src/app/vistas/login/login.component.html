@@ -5,13 +5,13 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="loginicon1.png" id="icon" alt="User Icon" />
+      <img src="../assets/loginicon1.png" id="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+    <form [formGroup]="formLogin" (ngSunmit)="OnLogin(formLogin.value)">
+      <input type="text" id="login" class="fadeIn second" formControlName="Usuario" placeholder="user">
+      <input type="password" id="password" class="fadeIn third" formControlName="password" placeholder="password">
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 
